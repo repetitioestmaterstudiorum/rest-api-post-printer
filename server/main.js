@@ -1,14 +1,15 @@
 import { Meteor } from "meteor/meteor";
+import "../imports/api/request-storage.js";
 import bodyParser from "body-parser";
+import { logStuff, insertARequest } from "../imports/api/request-storage.js";
 
 // For requests with content-type JSON:
-WebApp.connectHandlers.use("/", bodyParser.json());
+WebApp.connectHandlers.use("/api", bodyParser.json());
 // For requests with content-type application/x-www-form-urlencoded
-WebApp.connectHandlers.use("/", bodyParser.urlencoded({ extended: true }));
+WebApp.connectHandlers.use("/api", bodyParser.urlencoded({ extended: true }));
 // Then your handler:
-WebApp.connectHandlers.use("/", (req, res) => {
-  // API.handleRequest(res, req);
-  console.log(req.body); // for now
+WebApp.connectHandlers.use("/api", (req, res) => {
+  Meteor.call("insertRequest", req.body);
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
   res.writeHead(200);
