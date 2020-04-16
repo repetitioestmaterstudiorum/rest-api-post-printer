@@ -2,6 +2,7 @@
 
 Simply prints whatever is received via POST request...
 All entries are deleted on app startup. That is designed not to overflow the database. So if you use a free container on Heroku and some free MongoDB, it should never cost you anything.
+Documents are deleted after an hour.
 
 ## how to use
 
