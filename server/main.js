@@ -18,4 +18,5 @@ WebApp.connectHandlers.use("/api", (req, res) => {
 
 Meteor.startup(() => {
   // code to run on server at startup
+  Meteor.call("removeAllRequests");
 });
