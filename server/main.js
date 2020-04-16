@@ -1,7 +1,6 @@
 import { Meteor } from "meteor/meteor";
-import "../imports/api/request-storage.js";
 import bodyParser from "body-parser";
-import { logStuff, insertARequest } from "../imports/api/request-storage.js";
+import { Requests } from "../imports/api/request-storage.js";
 
 // For requests with content-type JSON:
 WebApp.connectHandlers.use("/api", bodyParser.json());
@@ -19,4 +18,8 @@ WebApp.connectHandlers.use("/api", (req, res) => {
 Meteor.startup(() => {
   // code to run on server at startup
   Meteor.call("removeAllRequests");
+  Requests.rawCollection().createIndex(
+    { createdAt: 1 },
+    { expireAfterSeconds: 3600 }
+  );
 });
