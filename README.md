@@ -1,7 +1,10 @@
 # rest-api-post-printer
 
 This app simply prints HTTP request received via POST request to the front-end...
+
 Displayed data: rey.headers and rey.body.
+
+![preview](https://github.com/sunyamare/rest-api-post-printer/blob/master/preview.png)
 
 - Requests are deleted automatically after an hour
 - All requests are deleted on app startup (droplet/server reboot)
@@ -18,7 +21,3 @@ Displayed data: rey.headers and rey.body.
 - git clone this repository
 - use https://medium.com/@leonardykris/how-to-run-a-meteor-js-application-on-heroku-in-10-steps-7aceb12de234 to deploy to heroku
 - post requests to <"your heroku url">/api
-
-## how it looks like
-
-![how it looks like](https://github.com/sunyamare/rest-api-post-printer/blob/master/teaser.png)
