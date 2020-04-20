@@ -1,0 +1,9 @@
+<template name="request">
+  <h3>{{createdAt}}</h3>
+  <h4>JSON detail view</h4>
+  <p class="data"></p>
+  <h4>Request headers</h4>
+  <p>{{formatJson request.reqHeaders}}</p>
+  <h4>Request body</h4>
+  <p>{{formatJson request.reqBody}}</p>
+</template>

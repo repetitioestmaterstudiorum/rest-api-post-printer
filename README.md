@@ -1,10 +1,19 @@
 # rest-api-post-printer
 
-Simply prints whatever is received via POST request...
-All entries are deleted on app startup. That is designed not to overflow the database. So if you use a free container on Heroku and some free MongoDB, it should never cost you anything.
-Documents are deleted after an hour.
+This app simply prints HTTP request received via POST request to the front-end...
+Displayed data: rey.headers and rey.body.
 
-## how to use
+- Requests are deleted automatically after an hour
+- All requests are deleted on app startup (droplet/server reboot)
+
+## Accepted formats of request bodies
+
+- x-www-form-urlencoded
+- raw/JSON
+- furm-data
+- multi-part form-data (thanks to multer)
+
+## how to use/deploy
 
 - git clone this repository
 - use https://medium.com/@leonardykris/how-to-run-a-meteor-js-application-on-heroku-in-10-steps-7aceb12de234 to deploy to heroku

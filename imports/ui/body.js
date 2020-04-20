@@ -3,6 +3,7 @@ import { Template } from "meteor/templating";
 import { Requests } from "../api/request-storage.js";
 
 import "./body.html";
+import "./request.js";
 
 // do stuff once file loads (onCreated)
 Template.body.onCreated(function () {
@@ -10,13 +11,13 @@ Template.body.onCreated(function () {
   Meteor.subscribe("requests");
 });
 
-// "global" function to stringify an object
-Template.registerHelper("parseJson", function (object) {
-  return JSON.stringify(object);
+Template.body.onRendered(function () {
+  // display app url for post info
+  this.find(".url").innerHTML = window.location.href;
 });
 
 Template.body.helpers({
-  getRequests() {
+  requests() {
     return Requests.find({}, { sort: { createdAt: -1 } });
   },
 });
