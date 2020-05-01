@@ -11,14 +11,12 @@ Template.body.onCreated(function () {
   Meteor.subscribe("requests");
 });
 
-Template.body.onRendered(function () {
-  // display app url for post info
-  this.find(".url").innerHTML = window.location.href;
-});
-
 Template.body.helpers({
   requests() {
     return Requests.find({}, { sort: { createdAt: -1 } });
+  },
+  absoluteUrl() {
+    return Meteor.absoluteUrl();
   },
 });
 
