@@ -2,7 +2,7 @@
 
 This app simply prints HTTP request received via POST request to the front-end...
 
-Displayed data: rey.headers and rey.body.
+Displayed request data: method, query, headers, body
 
 ![preview](https://github.com/repetitioestmaterstudiorum/rest-api-post-printer/blob/master/preview.png)
 
