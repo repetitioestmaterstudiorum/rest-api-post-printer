@@ -4,7 +4,7 @@ This app simply prints HTTP request received via POST request to the front-end..
 
 Displayed data: rey.headers and rey.body.
 
-![preview](https://github.com/sunyamare/rest-api-post-printer/blob/master/preview.png)
+![preview](https://github.com/repetitioestmaterstudiorum/rest-api-post-printer/blob/master/preview.png)
 
 - Requests are deleted automatically after an hour
 - All requests are deleted on app startup (droplet/server reboot)
