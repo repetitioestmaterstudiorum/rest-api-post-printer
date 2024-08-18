@@ -1,0 +1,15 @@
+meta {
+  name: test post request
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://rest-api-printer.fly.dev/api
+  body: multipartForm
+  auth: none
+}
+
+body:form-urlencoded {
+  somekey: some value
+}
